@@ -18,5 +18,9 @@
 .navbar-form input {
   border-style: none;
   border-radius: 0;
+  color: black;
+}
+
+input[placeholder] {
   color: #c1c1c1;
 }

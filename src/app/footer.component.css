@@ -1,0 +1,15 @@
+.navbar {
+  background-color: #D8D8D8;
+  height: 300px;
+  border-style: none;
+}
+
+.container {
+  margin-top: 20px;
+  width: 90%;
+}
+
+.nav > .col-md-12 {
+  background-color: #00B2BF;
+  height: 50px;
+}
