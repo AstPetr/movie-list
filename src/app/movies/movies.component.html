@@ -1,37 +1,29 @@
-<div class="row">
-  <div class="form-group">
-    <input #query type="text" (keyup)="search(query.value)" class="form-control" placeholder="Search">
-  </div>
-</div>
 
-<div class="row">
-  <div class="panel panel-default">
-    <div class="panel-body">
+
+  <ml-header>
+      <div search class="form-group">
+        <input #query type="text" (keyup)="search(query.value)" class="form-control" placeholder="Search">
+      </div>
+  </ml-header>
+
+  <div class="row">
+
       <template [ngIf]="searchResults && query.value">
+        <div class="panel panel-default">
+          <div class="panel-body">
         <div *ngFor="let movie of searchResults; let i=index" class="col-md-1">
           <div *ngIf="i < 12">
             <img *ngIf="movie.poster_path && movie.adult == false" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
           </div>
         </div>
+          </div>
+        </div>
       </template>
-    </div>
+
   </div>
-</div>
 
 
 <div class="row">
-
-  <!--<template [ngIf]="searchResults && query.value">-->
-    <!--<template ngFor let-movie [ngForOf]="searchResults">-->
-      <!--<div *ngIf="movie.poster_path" class="col-md-2">-->
-      <!--&lt;!&ndash;<div *ngIf="i < 18">&ndash;&gt;-->
-        <!--<img src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">-->
-      <!--&lt;!&ndash;</div>&ndash;&gt;-->
-      <!--</div>-->
-    <!--</template>-->
-  <!--</template>-->
-
-
   <!--<div class="col-md-2"></div>-->
   <div *ngFor="let movie of popularList; let i=index" class="col-md-2">
     <div *ngIf="i < 18">

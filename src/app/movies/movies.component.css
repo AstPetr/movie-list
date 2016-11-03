@@ -16,3 +16,17 @@ img{
   margin-right: 40px;
   /*margin: 40px;*/
 }
+
+.thumbnail{
+  border-radius: 0;
+}
+
+.form-group input {
+  border-style: none;
+  border-radius: 0;
+  color: black;
+}
+
+input[placeholder] {
+  color: #c1c1c1;
+}

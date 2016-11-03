@@ -25,4 +25,5 @@ export class MovieService {
     return this._jsonp.get('https://api.themoviedb.org/3/search/movie?callback=JSONP_CALLBACK&api_key='+this.apikey+'&language=en-US&query='+ query)
       .map(res => res.json());
   }
+
 }
