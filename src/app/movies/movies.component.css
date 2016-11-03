@@ -1,8 +1,18 @@
 img{
   width: 100%;
+  /*width: 500px;*/
+  /*height: 750px;*/
 }
 
 .col-md-2 {
   padding: 0;
 }
 
+.panel{
+  background-color: #00B2BF;
+  border-radius: 0;
+  border-style: none;
+  margin-left: 40px;
+  margin-right: 40px;
+  /*margin: 40px;*/
+}
