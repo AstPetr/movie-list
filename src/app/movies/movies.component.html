@@ -12,7 +12,7 @@
           <div class="panel-body">
         <div *ngFor="let movie of searchResults; let i=index" class="col-md-1">
           <div *ngIf="i < 12">
-            <img *ngIf="movie.poster_path && movie.adult == false" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+            <img *ngIf="movie.poster_path && movie.adult == false" (click)="onNavigate(movie)" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
           </div>
         </div>
           </div>
@@ -26,13 +26,14 @@
   <!--<div class="col-md-2"></div>-->
   <div *ngFor="let movie of popularList; let i=index" class="col-md-2">
     <div *ngIf="i < 36">
-      <a routerLink="/movie/{{movie.id}}"><img *ngIf="movie.poster_path" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}"></a>
+      <!--<a routerLink="/movie/{{movie.id}}"><img *ngIf="movie.poster_path" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}"></a>-->
+      <img *ngIf="movie.poster_path" (click)="onNavigate(movie)" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
     </div>
   </div>
 
   <div *ngFor="let movie of popularListTwo; let i=index" class="col-md-2">
     <div *ngIf="i < 16">
-      <img *ngIf="movie.poster_path" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+      <img *ngIf="movie.poster_path" (click)="onNavigate(movie)" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
     </div>
   </div>
 </div>

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MovieService} from "./movie.service";
+import {RouterModule, Router} from "@angular/router";
 
 @Component({
   selector: 'ml-movies',
@@ -9,10 +10,12 @@ import {MovieService} from "./movie.service";
 export class MoviesComponent implements OnInit{
   popularList: Array<Object>;
   popularListTwo: Array<Object>;
-  // popularListAll: Array<Object>;
   theatersList: Array<Object>;
   searchResults: Array<Object>;
 
+  onNavigate(movie){
+    this.router.navigate(['/movie/'+movie.id]);
+  }
 
   search(query) {
     if (query) {
@@ -23,7 +26,7 @@ export class MoviesComponent implements OnInit{
     }
   }
 
-  constructor(private movieService: MovieService) {
+  constructor(private movieService: MovieService, private router: Router) {
     this.movieService.getPopular().subscribe(res => {
       this.popularList = res.results;
     });
