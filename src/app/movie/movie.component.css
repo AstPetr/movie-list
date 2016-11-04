@@ -1,0 +1,19 @@
+h4 > small {
+  color: #d8d8d8;
+  word-spacing: 10px;
+}
+.jumbotron {
+  margin-bottom: 0px;
+  background-position: 0% 25%;
+  height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  border-radius: 0;
+  /*text-shadow: black 0.3em 0.3em 0.3em;*/
+}
+
+.btn {
+  border-radius: 0;
+  border-style: none;
+}

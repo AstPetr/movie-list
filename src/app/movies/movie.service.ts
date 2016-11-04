@@ -16,6 +16,11 @@ export class MovieService {
       .map(res => res.json());
   }
 
+  getPopularSecond(){
+    return this._jsonp.get('https://api.themoviedb.org/3/discover/movie?callback=JSONP_CALLBACK&sort_by=popularity.desc&page=2&api_key='+this.apikey)
+      .map(res => res.json());
+  }
+
   getInTheaters(){
     return this._jsonp.get('https://api.themoviedb.org/3/discover/movie?callback=JSONP_CALLBACK&primary_release_date.gte=2016-09-26&primary_release_date.lte=2016-10-30&api_key='+this.apikey)
       .map(res => res.json());
@@ -23,6 +28,11 @@ export class MovieService {
 
   searchMovie(query: string){
     return this._jsonp.get('https://api.themoviedb.org/3/search/movie?callback=JSONP_CALLBACK&api_key='+this.apikey+'&language=en-US&query='+ query)
+      .map(res => res.json());
+  }
+
+  getMovie(id:string){
+    return this._jsonp.get('https://api.themoviedb.org/3/movie/'+id+'?callback=JSONP_CALLBACK&api_key='+this.apikey)
       .map(res => res.json());
   }
 

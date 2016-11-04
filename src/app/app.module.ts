@@ -8,6 +8,8 @@ import { HeaderComponent } from './header.component';
 import { MoviesComponent } from './movies/movies.component';
 import {MovieService} from "./movies/movie.service";
 import { FooterComponent } from './footer.component';
+import { MovieComponent } from './movie/movie.component';
+import { routing } from './app.routing';
 
 
 @NgModule({
@@ -15,13 +17,15 @@ import { FooterComponent } from './footer.component';
     AppComponent,
     HeaderComponent,
     MoviesComponent,
-    FooterComponent
+    FooterComponent,
+    MovieComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    JsonpModule
+    JsonpModule,
+    routing
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]

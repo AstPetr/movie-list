@@ -1,0 +1,10 @@
+<div *ngIf="movie">
+  <div class="jumbotron" [ngStyle]="{'background-image': 'url(http://image.tmdb.org/t/p/original/' + movie.backdrop_path + ')'}">
+    <div class="container">
+      <h1>{{movie.title}}</h1>
+      <h4>{{movie.runtime}} min | <small *ngFor="let genre of movie.genres">{{genre.name}} </small></h4>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+    </div>
+  </div>
+</div>
+

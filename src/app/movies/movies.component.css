@@ -3,9 +3,18 @@ img{
   /*width: 500px;*/
   /*height: 750px;*/
 }
-
+/*div{*/
+  /*padding: 0;*/
+  /*margin: 0;*/
+/*}*/
 .col-md-2 {
   padding: 0;
+}
+
+.col-8{
+  padding: 0;
+  width: 12.5%;
+  display: inline-block;
 }
 
 .panel{
@@ -15,6 +24,11 @@ img{
   margin-left: 40px;
   margin-right: 40px;
   /*margin: 40px;*/
+}
+/*.panel img*/
+.col-md-1 {
+  padding: 0;
+  margin: 0;
 }
 
 .thumbnail{
