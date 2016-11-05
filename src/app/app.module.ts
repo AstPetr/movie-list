@@ -25,7 +25,8 @@ import { routing } from './app.routing';
     FormsModule,
     HttpModule,
     JsonpModule,
-    routing
+    routing,
+    // youtube-embed
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]

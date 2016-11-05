@@ -26,13 +26,13 @@
         </p>
       </div>
       <div id="video" class="col-md-5">
-        {{movieVideo.results[0].key}}
-        <a href="https://www.youtube.com/watch?v={{movieVideo.results[0].key}}">Link</a>
+        <iframe width="560" height="315" [src]="createVideoLink(movieVideo.results[0].key)" frameborder="0" allowfullscreen></iframe>
       </div>
       <div class="col-md-5"></div>
     </div>
     <div class="col-md-1"></div>
   </div>
+
 
 
 
