@@ -1,11 +1,11 @@
  import { Component, OnInit } from '@angular/core';
  import {Router, ActivatedRoute} from '@angular/router';
- import {MovieService} from "../movies/movie.service";
+ import {MovieService} from "../movie.service";
 
 @Component({
   selector: 'ml-movie',
-  templateUrl: './movie.component.html',
-  styleUrls: ['./movie.component.css']
+  templateUrl: 'movie.component.html',
+  styleUrls: ['movie.component.css']
 })
 export class MovieComponent implements OnInit {
   movie: Object;

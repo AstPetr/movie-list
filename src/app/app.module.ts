@@ -8,7 +8,7 @@ import { HeaderComponent } from './header.component';
 import { MoviesComponent } from './movies/movies.component';
 import {MovieService} from "./movies/movie.service";
 import { FooterComponent } from './footer.component';
-import { MovieComponent } from './movie/movie.component';
+import { MovieComponent } from './movies/movie/movie.component';
 import { routing } from './app.routing';
 
 
