@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit,  OnDestroy } from '@angular/core';
 import {MovieService} from "./movie.service";
 import {RouterModule, Router} from "@angular/router";
 
@@ -7,7 +7,7 @@ import {RouterModule, Router} from "@angular/router";
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.css']
 })
-export class MoviesComponent implements OnInit{
+export class MoviesComponent implements OnInit, OnDestroy {
   popularList: Array<Object>;
   popularListTwo: Array<Object>;
   theatersList: Array<Object>;
@@ -15,10 +15,16 @@ export class MoviesComponent implements OnInit{
 
   onNavigate(movie){
     this.router.navigate(['/movie/'+movie.id]);
+    document.body.scrollTop = 0;
+  }
+
+  clear(query){
+    query.value = "";
   }
 
   search(query) {
     if (query) {
+      document.body.scrollTop = 0;
       this.movieService.searchMovie(query).subscribe(res => {
         this.searchResults = res.results;
         // console.log(res.results);
@@ -36,10 +42,10 @@ export class MoviesComponent implements OnInit{
     this.movieService.getInTheaters().subscribe(res => {
       this.theatersList = res.results;
     });
-    // this.popularListAll = Object.assign({}, this.popularList, this.popularListTwo);
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
+
+  ngOnDestroy() {}
 
 }

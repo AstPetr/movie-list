@@ -1,41 +1,39 @@
 
-
+<!--Header Search-->
   <ml-header>
       <div search class="form-group">
         <input #query type="text" (keyup)="search(query.value)" class="form-control" placeholder="Search">
       </div>
   </ml-header>
-<!--<div class="container">-->
+<!--Search Results-->
   <div class="row">
       <template [ngIf]="searchResults && query.value">
         <div class="panel panel-default">
           <div class="panel-body">
         <div *ngFor="let movie of searchResults; let i=index" class="col-md-1">
           <div *ngIf="i < 12">
-            <img *ngIf="movie.poster_path && movie.adult == false" (click)="onNavigate(movie)" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+            <img *ngIf="movie.poster_path && movie.adult == false" (click)="onNavigate(movie); clear(query)" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
           </div>
         </div>
           </div>
         </div>
       </template>
   </div>
-
-  <router-outlet></router-outlet>
-
+<!--Movie Info-->
+<router-outlet></router-outlet>
+<!--Popular Movies-->
 <div class="row">
-  <!--<div class="col-md-2"></div>-->
   <div *ngFor="let movie of popularList; let i=index" class="col-md-2">
     <div *ngIf="i < 36">
       <!--<a routerLink="/movie/{{movie.id}}"><img *ngIf="movie.poster_path" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}"></a>-->
-      <img *ngIf="movie.poster_path" (click)="onNavigate(movie)" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+      <img *ngIf="movie.poster_path" (click)="onNavigate(movie); ; clear(query)" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
     </div>
   </div>
 
   <div *ngFor="let movie of popularListTwo; let i=index" class="col-md-2">
     <div *ngIf="i < 16">
-      <img *ngIf="movie.poster_path" (click)="onNavigate(movie)" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+      <img *ngIf="movie.poster_path" (click)="onNavigate(movie); ; clear(query)" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
     </div>
   </div>
 </div>
-<!--</div>-->
 
