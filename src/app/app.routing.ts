@@ -1,7 +1,6 @@
 import {Routes, RouterModule} from "@angular/router";
 import {MoviesComponent} from "./movies/movies.component";
 import {ModuleWithProviders} from "@angular/core";
-import {MovieComponent} from "./movies/movie/movie.component";
 import {movieRoutes} from "./movies/movies.routes";
 
 const appRoutes: Routes = [
@@ -14,10 +13,6 @@ const appRoutes: Routes = [
     component: MoviesComponent,
     children: movieRoutes
   }
-  // {
-  //   path: 'movie/:id',
-  //   component: MovieComponent
-  // }
 ];
 
 export const appRoutingProviders: any[] = [];

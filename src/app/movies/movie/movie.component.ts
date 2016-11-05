@@ -9,6 +9,7 @@
 })
 export class MovieComponent implements OnInit {
   movie: Object;
+  movieVideo: Object;
 
   constructor(private router:ActivatedRoute, private movieService:MovieService) {}
 
@@ -16,10 +17,16 @@ export class MovieComponent implements OnInit {
     this.router.params.subscribe((params) => {
       let id = params['id'];
       this.movieService.getMovie(id).subscribe(movie => {
-        // console.log(movie);
+        console.log(movie);
         this.movie = movie;
       });
+      this.movieService.getMovieVideos(id).subscribe(video => {
+        console.log(video);
+        this.movieVideo = video;
+        // console.log(this.movieVideo);
+      });
     });
+    // console.log(this.movieVideo.id);
   }
 
 }

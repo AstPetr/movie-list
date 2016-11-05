@@ -1,4 +1,4 @@
-<div *ngIf="movie">
+<div *ngIf="movie && movieVideo">
   <div class="jumbotron" [ngStyle]="{'background-image': 'url(http://image.tmdb.org/t/p/original/' + movie.backdrop_path + ')'}">
     <div class="container">
       <h1>{{movie.title}}</h1>
@@ -22,31 +22,19 @@
         <h4>Aprašymas</h4>
         <p>
           {{movie.overview}}
+
         </p>
       </div>
-      <div id="video" class="col-md-5"></div>
+      <div id="video" class="col-md-5">
+        {{movieVideo.results[0].key}}
+        <a href="https://www.youtube.com/watch?v={{movieVideo.results[0].key}}">Link</a>
+      </div>
       <div class="col-md-5"></div>
     </div>
     <div class="col-md-1"></div>
   </div>
-  <!--<br>-->
-  <!--<br>-->
-  <!--<br>-->
-  <!--<br>-->
-  <!--<br>-->
-  <!--<br>-->
-  <!--<br>-->
-  <!--<br>-->
-  <!--<br>-->
-  <!--<br>-->
-  <!--<br>-->
-  <!--<br>-->
-  <!--<br>-->
-  <!--<br>-->
-  <!--<br>-->
-  <!--<br>-->
-  <!--<br>-->
-  <!--<br>-->
-  <!--<br>-->
+
+
+
 </div>
 
