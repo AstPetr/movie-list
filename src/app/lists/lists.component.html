@@ -1,0 +1,25 @@
+<ml-header>
+  <div search class="form-group">
+    <input #query type="text" (keyup)="search(query.value)" class="form-control" placeholder="Search">
+  </div>
+</ml-header>
+
+<div class="row" id="add">
+  <div class="col-xs-12">
+    <form id="movie-list-add">
+      <div class="row">
+        <div class="col-sm-5 form-group">
+          <label for="item-name">Sąrašo Pavadinimas</label>
+          <input type="text" id="item-name" required class="form-control" ngModel name="name">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button class="btn btn-success" type="submit">Pridėti</button>
+          <button class="btn btn-danger" type="button">Ištrinti</button>
+          <!--<button class="btn btn-primary" type="button">Clear</button>-->
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

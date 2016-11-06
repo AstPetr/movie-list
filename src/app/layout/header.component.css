@@ -8,25 +8,29 @@
   margin-top: 20px;
 }
 
-.nav.navbar-nav li a {
+.nav.navbar-nav.special li a, li > .spc {
   color: #ffffff;
   text-transform: uppercase;
   font-family: 'Lato', sans-serif;
 }
+.nav.navbar-nav li a:hover {
+  color: #337ab7;
+}
+/*.nav.navbar-nav.special li a, li > .spc a:hover {*/
+  /*color: #337ab7;*/
+/*}*/
+/*.open .dropdown-menu {*/
+  /*background-color: #337ab7;*/
+/*}*/
+/*.navbar-default .navbar-nav > .open > a,*/
+/*.navbar-default .navbar-nav > .open > a:focus,*/
+/*.navbar-default .navbar-nav > .open > a:hover {*/
+  /*background: #0D0D0D;*/
+/*}*/
 
-.open .dropdown-menu {
-  background-color: #337ab7;
-  /*border: 1px solid #d8d8d8;*/
-}
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:focus,
-.navbar-default .navbar-nav > .open > a:hover {
-  background: #0D0D0D;
-}
-
-.open .dropdown-menu li a {
-  font-family: 'Roboto', sans-serif;
-}
-.open .dropdown-menu a:hover {
-  background-color: #0D0D0D;
-}
+/*.open .dropdown-menu li a {*/
+  /*font-family: 'Roboto', sans-serif;*/
+/*}*/
+/*.open .dropdown-menu a:hover {*/
+  /*background-color: #0D0D0D;*/
+/*}*/

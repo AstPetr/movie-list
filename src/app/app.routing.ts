@@ -4,8 +4,13 @@ import {ModuleWithProviders} from "@angular/core";
 import {movieRoutes} from "./movies/movies.routes";
 import {TvComponent} from "./tv/tv.component";
 import {tvRoutes} from "./tv/tv.routes";
+import {ListsComponent} from "./lists/lists.component";
 
 const appRoutes: Routes = [
+  {
+    path: 'lists',
+    component: ListsComponent
+  },
   {
     path: 'tv',
     component: TvComponent,

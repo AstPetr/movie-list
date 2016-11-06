@@ -4,6 +4,16 @@
   <div search class="form-group">
     <input #query type="text" (keyup)="search(query.value)" class="form-control" placeholder="Search">
   </div>
+  <!--Header Dropdown-->
+  <li dropdown class="dropdown" rbDropdown>
+    <a class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+      <li><a href="#">Login</a></li>
+      <li><a href="#">Other</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#">Logout</a></li>
+    </ul>
+  </li>
 </ml-header>
 <!--Search Results-->
 <div class="row">

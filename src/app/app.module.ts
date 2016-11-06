@@ -14,6 +14,7 @@ import { TvComponent } from './tv/tv.component';
 import { TvShowComponent } from './tv/tv-show/tv-show.component';
 import {TvService} from "./tv/tv.service";
 import {DropdownDirective} from "./layout/dropdown.directive";
+import { ListsComponent } from './lists/lists.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {DropdownDirective} from "./layout/dropdown.directive";
     MovieComponent,
     TvComponent,
     TvShowComponent,
-    DropdownDirective
+    DropdownDirective,
+    ListsComponent
   ],
   imports: [
     BrowserModule,
