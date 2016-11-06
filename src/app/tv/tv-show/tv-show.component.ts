@@ -6,7 +6,7 @@ import {TvService} from "../tv.service";
 @Component({
   selector: 'ml-tv-show',
   templateUrl: './tv-show.component.html',
-  styleUrls: ['./tv-show.component.css']
+  styleUrls: ['../../movies/movie/movie.component.css']
 })
 export class TvShowComponent implements OnInit {
 
@@ -27,7 +27,7 @@ export class TvShowComponent implements OnInit {
     this.router.params.subscribe((params) => {
       let id = params['id'];
       this.tvService.getTvShow(id).subscribe(tvshow => {
-        console.log(tvshow);
+        // console.log(tvshow);
         this.tvshow = tvshow;
       });
       this.tvService.getTvShowVideos(id).subscribe(video => {
@@ -35,6 +35,7 @@ export class TvShowComponent implements OnInit {
         this.tvshowVideo = video;
       });
       this.tvService.getTvShowKeywords(id).subscribe(keywords => {
+        console.log(keywords);
         this.tvshowKeywords = keywords;
       });
     });

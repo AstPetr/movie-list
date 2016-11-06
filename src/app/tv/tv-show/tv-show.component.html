@@ -1,3 +1,90 @@
-<p>
-  tv-show works!
-</p>
+<div *ngIf="tvshow && tvshowVideo && tvshowKeywords">
+  <!------------------------Jumbotron------------------------->
+  <div class="jumbotron"
+       [ngStyle]="{'background-image': 'url(http://image.tmdb.org/t/p/original/' + tvshow.backdrop_path + ')'}">
+    <div class="container">
+      <h1>{{tvshow.name}}</h1>
+      <h4>{{tvshow.number_of_episodes}} episodes |
+        <small *ngFor="let genre of tvshow.genres"> {{genre.name}}</small>
+      </h4>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+    </div>
+  </div>
+
+
+  <!------------------All details for Movie-------------------->
+
+
+  <div id="info" class="row">
+    <!------------------------------>
+    <div class="col-md-1"></div>
+    <!------------------------------>
+    <div class="col-md-10">
+      <!------------------>
+      <div class="row"><div class="navbar navbar-default">
+        <div class="col-md-3"></div>
+        <div class="col-md-9">
+          <h3>{{tvshow.vote_average}}<small> / 10</small> | {{tvshow.first_air_date}}</h3>
+        </div>
+      </div></div>
+      <!------------------>
+      <div class="row">
+        <div id="infoandthumb" class="col-md-7">
+          <div class="col-md-4">
+            <img class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{tvshow.poster_path}}" alt="">
+          </div>
+          <div id="overview" class="col-md-8">
+            <h3>Aprašymas</h3>
+            <p>
+              {{tvshow.overview | slice: 0:300 }}{{tvshow.overview.length > 300 ? ' ...' : ''}}
+            </p>
+          </div>
+          <div class="col-md-12">
+            <hr>
+            <h3 style="padding-left: 15px;">Informacija</h3>
+            <div class="col-md-4">
+              <h4>Naujausia serija:</h4>
+              <p>{{tvshow.last_air_date}}</p>
+              <h4>Statusas:</h4>
+              <p>{{tvshow.status}}</p>
+            </div>
+            <div class="col-md-4">
+              <h4>Žanrai:</h4>
+              <p *ngFor="let genre of tvshow.genres"> {{genre.name}}</p>
+            </div>
+            <div class="col-md-4">
+              <h4>Filmo kalba:</h4>
+              <p style="text-transform: uppercase;">{{tvshow.original_language}}</p>
+              <h4>Epizodai:</h4>
+              <p> {{tvshow.number_of_episodes}}</p>
+            </div>
+          </div>
+        </div>
+        <div id="video" class="col-md-5">
+          <div *ngIf="tvshowVideo.results && tvshowVideo.results.length > 0">
+            <h4>Video</h4>
+            <iframe width="560" height="315" [src]="createVideoLink(tvshowVideo.results[0].key)" frameborder="0"
+                    allowfullscreen></iframe>
+          </div>
+          <h4  *ngIf="tvshowKeywords.results && tvshowKeywords.results.length > 0">Raktažodžiai</h4>
+          <div id="keywords" *ngIf="tvshowKeywords.results && tvshowKeywords.results.length > 0">
+            <div *ngFor="let keyword of tvshowKeywords.results; let i=index">
+              <div *ngIf="i<15"><span class="label label-primary">{{keyword.name}}</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!------------------>
+      <div class="row">
+        <div id="footer-blue" class="col-md-12"></div>
+        <!--<div id="footer-orange" class="col-md-5"></div>-->
+      </div>
+    </div>
+    <!----------------------------->
+    <div class="col-md-1"></div>
+    <!----------------------------->
+  </div>
+
+
+</div>
+
