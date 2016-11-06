@@ -66,7 +66,7 @@
             <iframe width="560" height="315" [src]="createVideoLink(movieVideo.results[0].key)" frameborder="0"
                     allowfullscreen></iframe>
           </div>
-          <h4>Raktažodžiai</h4>
+          <h4  *ngIf="movieKeywords.keywords && movieKeywords.keywords.length > 0">Raktažodžiai</h4>
           <div id="keywords" *ngIf="movieKeywords.keywords && movieKeywords.keywords.length > 0">
             <div *ngFor="let keyword of movieKeywords.keywords; let i=index">
               <div *ngIf="i<15"><span class="label label-primary">{{keyword.name}}</span></div>
@@ -75,6 +75,10 @@
         </div>
      </div>
       <!------------------>
+      <div class="row">
+        <div id="footer-blue" class="col-md-12"></div>
+        <!--<div id="footer-orange" class="col-md-5"></div>-->
+      </div>
     </div>
     <!----------------------------->
     <div class="col-md-1"></div>

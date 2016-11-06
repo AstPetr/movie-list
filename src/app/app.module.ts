@@ -10,6 +10,9 @@ import {MovieService} from "./movies/movie.service";
 import { FooterComponent } from './layout/footer.component';
 import { MovieComponent } from './movies/movie/movie.component';
 import { routing } from './app.routing';
+import { TvComponent } from './tv/tv.component';
+import { TvShowComponent } from './tv/tv-show/tv-show.component';
+import {TvService} from "./tv/tv.service";
 
 
 @NgModule({
@@ -18,7 +21,9 @@ import { routing } from './app.routing';
     HeaderComponent,
     MoviesComponent,
     FooterComponent,
-    MovieComponent
+    MovieComponent,
+    TvComponent,
+    TvShowComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +32,7 @@ import { routing } from './app.routing';
     JsonpModule,
     routing
   ],
-  providers: [MovieService],
+  providers: [MovieService, TvService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

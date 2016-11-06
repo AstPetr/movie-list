@@ -1,0 +1,39 @@
+
+<!--Header Search-->
+<ml-header>
+  <div search class="form-group">
+    <input #query type="text" (keyup)="search(query.value)" class="form-control" placeholder="Search">
+  </div>
+</ml-header>
+<!--Search Results-->
+<div class="row">
+  <template [ngIf]="searchResults && query.value">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div *ngFor="let tvshow of searchResults; let i=index" class="col-md-1">
+          <div *ngIf="i < 12">
+            <img *ngIf="tvshow.poster_path" (click)="onNavigate(tvshow); clear(query)" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{tvshow.poster_path}}">
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+</div>
+<!--Movie Info-->
+<router-outlet></router-outlet>
+<!--Popular Movies-->
+<div class="row">
+  <div *ngFor="let tvshow of popularList; let i=index" class="col-md-2">
+    <div *ngIf="i < 36">
+      <img *ngIf="tvshow.poster_path" (click)="onNavigate(tvshow); clear(query)" src="http://image.tmdb.org/t/p/w500/{{tvshow.poster_path}}">
+<!--<a routerLink = "/tv/{{tvshow.id}}">      <img *ngIf="tvshow.poster_path" src="http://image.tmdb.org/t/p/w500/{{tvshow.poster_path}}"></a>-->
+    </div>
+  </div>
+
+  <div *ngFor="let tvshow of popularListTwo; let i=index" class="col-md-2">
+    <div *ngIf="i < 10">
+      <img *ngIf="tvshow.poster_path" (click)="onNavigate(tvshow); ; clear(query)" src="http://image.tmdb.org/t/p/w500/{{tvshow.poster_path}}">
+    </div>
+  </div>
+</div>
+

@@ -2,16 +2,27 @@ import {Routes, RouterModule} from "@angular/router";
 import {MoviesComponent} from "./movies/movies.component";
 import {ModuleWithProviders} from "@angular/core";
 import {movieRoutes} from "./movies/movies.routes";
+import {TvComponent} from "./tv/tv.component";
+import {tvRoutes} from "./tv/tv.routes";
 
 const appRoutes: Routes = [
   {
-    path: '',
-    component: MoviesComponent
+    path: 'tv',
+    component: TvComponent,
+    children: tvRoutes
+  },
+  {
+    path: 'tv',
+    component: TvComponent
   },
   {
     path: '',
     component: MoviesComponent,
     children: movieRoutes
+  },
+  {
+    path: '',
+    component: MoviesComponent
   }
 ];
 
