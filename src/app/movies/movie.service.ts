@@ -41,4 +41,9 @@ export class MovieService {
       .map(res => res.json());
   }
 
+  getMovieKeywords(id:string) {
+    return this._jsonp.get('https://api.themoviedb.org/3/movie/'+id+'/keywords?callback=JSONP_CALLBACK&api_key='+this.apikey)
+      .map(res => res.json());
+  }
+
 }

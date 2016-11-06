@@ -1,39 +1,85 @@
-<div *ngIf="movie && movieVideo">
-  <div class="jumbotron" [ngStyle]="{'background-image': 'url(http://image.tmdb.org/t/p/original/' + movie.backdrop_path + ')'}">
+<div *ngIf="movie && movieVideo && movieKeywords">
+  <!------------------------Jumbotron------------------------->
+  <div class="jumbotron"
+       [ngStyle]="{'background-image': 'url(http://image.tmdb.org/t/p/original/' + movie.backdrop_path + ')'}">
     <div class="container">
       <h1>{{movie.title}}</h1>
-      <h4>{{movie.runtime}} min | <small *ngFor="let genre of movie.genres">{{genre.name}} </small></h4>
+      <h4>{{movie.runtime}} min |
+        <small *ngFor="let genre of movie.genres"> {{genre.name}}</small>
+      </h4>
       <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
     </div>
   </div>
+
+
+  <!------------------All details for Movie-------------------->
+
+
   <div id="info" class="row">
+    <!------------------------------>
     <div class="col-md-1"></div>
+    <!------------------------------>
     <div class="col-md-10">
-      <div class="navbar navbar-default">
+      <!------------------>
+      <div class="row"><div class="navbar navbar-default">
         <div class="col-md-3"></div>
         <div class="col-md-9">
-          <h4>{{movie.vote_average}} | {{movie.release_date}}</h4>
+          <h3>{{movie.vote_average}}<small> / 10</small> | {{movie.release_date}}</h3>
         </div>
-      </div>
-      <div class="col-md-2">
-        <img class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="">
-      </div>
-      <div id="overview" class="col-md-5">
-        <h4>Aprašymas</h4>
-        <p>
-          {{movie.overview}}
-
-        </p>
-      </div>
-      <div id="video" class="col-md-5">
-        <iframe width="560" height="315" [src]="createVideoLink(movieVideo.results[0].key)" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div class="col-md-5"></div>
+      </div></div>
+      <!------------------>
+     <div class="row">
+         <div id="infoandthumb" class="col-md-7">
+          <div class="col-md-4">
+            <img class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="">
+          </div>
+          <div id="overview" class="col-md-8">
+            <h3>Aprašymas</h3>
+            <p>
+              {{movie.overview | slice: 0:300 }}{{movie.overview.length > 300 ? ' ...' : ''}}
+            </p>
+          </div>
+          <div class="col-md-12">
+            <hr>
+            <h3 style="padding-left: 15px;">Informacija</h3>
+             <div class="col-md-4">
+               <h4>Išleidimo data:</h4>
+               <p>{{movie.release_date}}</p>
+               <h4>Tagline:</h4>
+               <p>{{movie.tagline}}</p>
+             </div>
+            <div class="col-md-4">
+               <h4>Žanrai:</h4>
+               <p *ngFor="let genre of movie.genres"> {{genre.name}}</p>
+             </div>
+            <div class="col-md-4">
+              <h4>Filmo kalba:</h4>
+              <p style="text-transform: uppercase;">{{movie.original_language}}</p>
+              <h4>Trukme</h4>
+              <p>{{movie.runtime}} min</p>
+            </div>
+          </div>
+        </div>
+        <div id="video" class="col-md-5">
+          <div *ngIf="movieVideo.results && movieVideo.results.length > 0">
+            <h4>Video</h4>
+            <iframe width="560" height="315" [src]="createVideoLink(movieVideo.results[0].key)" frameborder="0"
+                    allowfullscreen></iframe>
+          </div>
+          <h4>Raktažodžiai</h4>
+          <div id="keywords" *ngIf="movieKeywords.keywords && movieKeywords.keywords.length > 0">
+            <div *ngFor="let keyword of movieKeywords.keywords; let i=index">
+              <div *ngIf="i<15"><span class="label label-primary">{{keyword.name}}</span></div>
+            </div>
+          </div>
+        </div>
+     </div>
+      <!------------------>
     </div>
+    <!----------------------------->
     <div class="col-md-1"></div>
+    <!----------------------------->
   </div>
-
-
 
 
 </div>

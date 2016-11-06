@@ -11,12 +11,11 @@
 export class MovieComponent implements OnInit {
   movie: Object;
   movieVideo: Object;
-  video: any = {id: 'wzrnuUOoFNM'};
+  movieKeywords: Object;
   baseUrl:string = 'https://www.youtube.com/embed/';
-  link: string = 'https://www.youtube.com/embed/hEJnMQG9ev8';
   url: SafeResourceUrl;
 
-  createVideoLink(id) {
+  createVideoLink(id='HkIMQLh9k5U') {
     return this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.baseUrl + id);
   }
 
@@ -27,12 +26,15 @@ export class MovieComponent implements OnInit {
     this.router.params.subscribe((params) => {
       let id = params['id'];
       this.movieService.getMovie(id).subscribe(movie => {
-        // console.log(movie);
+        console.log(movie);
         this.movie = movie;
       });
       this.movieService.getMovieVideos(id).subscribe(video => {
-        console.log(video);
+        // console.log(video);
         this.movieVideo = video;
+      });
+      this.movieService.getMovieKeywords(id).subscribe(keywords => {
+        this.movieKeywords = keywords;
       });
     });
     // console.log(this.movieVideo.id);
