@@ -20,12 +20,14 @@
       </template>
   </div>
 <!--Movie Info-->
-<router-outlet></router-outlet>
+<!--<div >-->
+  <router-outlet></router-outlet>
+<!--</div>-->
 <!--Popular Movies-->
 <div class="row">
   <div *ngFor="let movie of popularList; let i=index" class="col-md-2">
     <div *ngIf="i < 36">
-      <img *ngIf="movie.poster_path" (click)="onNavigate(movie); ; clear(query)" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+      <img *ngIf="movie.poster_path" (click)="onNavigate(movie); clear(query)" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
     </div>
   </div>
 

@@ -20,6 +20,26 @@ img {
   /*padding: 0;*/
   margin-top: 40px;
 }
+
+/*iframe .clickVideo{*/
+  /*width: 250% !important;*/
+  /*position: absolute;*/
+  /*height: 100% !important;*/
+  /*z-index: 9999;*/
+  /*!*margin: auto !important;*!*/
+  /*top: -400px;*/
+  /*left: -590px;*/
+/*}*/
+
+/*iframe {*/
+  /*position: relative;*/
+  /*z-index: -1;*/
+/*}*/
+/*.frame {*/
+  /*position: absolute;*/
+  /*z-index: 9999;*/
+  /*background-color: #0D0D0D;*/
+/*}*/
 .jumbotron {
   background-color: #337ab7;
   margin-bottom: 0px;
@@ -65,7 +85,9 @@ h3 > small {
 }
 #overview h3 {
   margin: 10px 0 10px 0;
+  /*color: #337ab7;*/
 }
+
 #video {
   background-color: #F08403;
   height: 600px;
@@ -79,7 +101,7 @@ h3 > small {
   padding: 20px;
   padding-top: 10px;
   width: 100%;
-  height: 230px;
+  height: 220px;
 }
 #keywords {
   width: 100%;

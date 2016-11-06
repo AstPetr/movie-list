@@ -1,4 +1,4 @@
- import { Component, OnInit } from '@angular/core';
+ import {Component, OnInit} from '@angular/core';
  import {Router, ActivatedRoute} from '@angular/router';
  import {MovieService} from "../movie.service";
  import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
@@ -9,6 +9,7 @@
   styleUrls: ['movie.component.css']
 })
 export class MovieComponent implements OnInit {
+
   movie: Object;
   movieVideo: Object;
   movieKeywords: Object;
@@ -37,7 +38,6 @@ export class MovieComponent implements OnInit {
         this.movieKeywords = keywords;
       });
     });
-    // console.log(this.movieVideo.id);
   }
 
 }

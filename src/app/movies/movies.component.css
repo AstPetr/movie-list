@@ -3,7 +3,8 @@ img{
 }
 
 .col-md-2 {
-  padding: 0;
+  padding: 10px;
+  /*margin: 5px;*/
 }
 
 .panel{

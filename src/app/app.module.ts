@@ -13,6 +13,7 @@ import { routing } from './app.routing';
 import { TvComponent } from './tv/tv.component';
 import { TvShowComponent } from './tv/tv-show/tv-show.component';
 import {TvService} from "./tv/tv.service";
+import {DropdownDirective} from "./layout/dropdown.directive";
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {TvService} from "./tv/tv.service";
     FooterComponent,
     MovieComponent,
     TvComponent,
-    TvShowComponent
+    TvShowComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
