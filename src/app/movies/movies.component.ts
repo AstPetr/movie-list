@@ -27,7 +27,6 @@ export class MoviesComponent implements OnInit, OnDestroy {
       document.body.scrollTop = 0;
       this.movieService.searchMovie(query).subscribe(res => {
         this.searchResults = res.results;
-        // console.log(res.results);
       });
     }
   }

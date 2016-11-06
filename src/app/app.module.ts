@@ -4,10 +4,10 @@ import { FormsModule } from '@angular/forms';
 import {HttpModule, JsonpModule} from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header.component';
+import { HeaderComponent } from './layout/header.component';
 import { MoviesComponent } from './movies/movies.component';
 import {MovieService} from "./movies/movie.service";
-import { FooterComponent } from './footer.component';
+import { FooterComponent } from './layout/footer.component';
 import { MovieComponent } from './movies/movie/movie.component';
 import { routing } from './app.routing';
 
@@ -25,8 +25,7 @@ import { routing } from './app.routing';
     FormsModule,
     HttpModule,
     JsonpModule,
-    routing,
-    // youtube-embed
+    routing
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]
