@@ -5,6 +5,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class MovieService {
   apikey: string;
+  movieList: Array<Object> = [];
 
   constructor(private _jsonp:Jsonp) {
     this.apikey = '56e73d08d7ac775ed65f1f7d6674d6f1';
@@ -44,6 +45,13 @@ export class MovieService {
   getMovieKeywords(id:string) {
     return this._jsonp.get('https://api.themoviedb.org/3/movie/'+id+'/keywords?callback=JSONP_CALLBACK&api_key='+this.apikey)
       .map(res => res.json());
+  }
+
+  getMovies(movies:string[]) {
+    for (let id of movies) {
+      this.movieList.push(this.getMovie(id));
+    }
+    return this.movieList;
   }
 
 }

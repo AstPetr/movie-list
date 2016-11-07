@@ -17,6 +17,8 @@ import {DropdownDirective} from "./layout/dropdown.directive";
 import { ListsComponent } from './lists/lists.component';
 import {ListService} from "./lists/list.service";
 import { ListAddComponent } from './lists/list-add.component';
+import { ListComponent } from './lists/list/list.component';
+import { ThumbanimDirective } from './thumbanim.directive';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { ListAddComponent } from './lists/list-add.component';
     TvShowComponent,
     DropdownDirective,
     ListsComponent,
-    ListAddComponent
+    ListAddComponent,
+    ListComponent,
+    ThumbanimDirective
   ],
   imports: [
     BrowserModule,

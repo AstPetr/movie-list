@@ -21,7 +21,7 @@
 
       <div class="row">
         <template [ngIf]="searchResults && searchResults.length > 0">
-          <div class="panel panel-default">
+          <div class="panel panel-default animated fadeIn">
             <div class="panel-body">
               <div *ngFor="let movie of searchResults; let i=index" class="col-md-1">
                 <div *ngIf="i < 12">

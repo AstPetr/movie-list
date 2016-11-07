@@ -5,8 +5,14 @@ import {movieRoutes} from "./movies/movies.routes";
 import {TvComponent} from "./tv/tv.component";
 import {tvRoutes} from "./tv/tv.routes";
 import {ListsComponent} from "./lists/lists.component";
+import {listRoutes} from "./lists/list.routes";
 
 const appRoutes: Routes = [
+  {
+    path: 'lists',
+    component: ListsComponent,
+    children: listRoutes
+  },
   {
     path: 'lists',
     component: ListsComponent
