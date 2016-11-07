@@ -5,8 +5,8 @@ import {List} from "../list";
 export class ListService {
   // Sarasu masyvas
   private lists: List[] = [
-    new List('Name', ['arefef', 'ewrferf']),
-    new List('Name2', ['arefef', 'ewrferf', 'dgfdkgmgkh'])
+    new List('Name', ['264660', '157336']),
+    new List('Name2', ['162','1995','270303'])
   ];
   constructor() { }
 
