@@ -15,6 +15,8 @@ import { TvShowComponent } from './tv/tv-show/tv-show.component';
 import {TvService} from "./tv/tv.service";
 import {DropdownDirective} from "./layout/dropdown.directive";
 import { ListsComponent } from './lists/lists.component';
+import {ListService} from "./lists/list.service";
+import { ListAddComponent } from './lists/list-add.component';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { ListsComponent } from './lists/lists.component';
     TvComponent,
     TvShowComponent,
     DropdownDirective,
-    ListsComponent
+    ListsComponent,
+    ListAddComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,7 @@ import { ListsComponent } from './lists/lists.component';
     JsonpModule,
     routing
   ],
-  providers: [MovieService, TvService],
+  providers: [MovieService, TvService, ListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

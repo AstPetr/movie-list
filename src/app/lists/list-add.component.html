@@ -1,0 +1,20 @@
+<div class="row" id="add">
+  <div class="col-xs-12">
+    <form id="movie-list-add" (ngSubmit)="onSubmit(f.value)" #f="ngForm">
+      <div class="row">
+        <div class="col-sm-5 form-group">
+          <label for="item-name">Sąrašo Pavadinimas</label>
+          <input type="text" id="item-name" required class="form-control" ngModel name="name">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button class="btn btn-success" type="submit" *ngIf="isAdd" [disabled]="!f.valid">Pridėti</button>
+          <button class="btn btn-success" type="submit" *ngIf="!isAdd" [disabled]="!f.valid">Redaguti</button>
+          <button class="btn btn-danger" type="button" *ngIf="!isAdd">Ištrinti</button>
+          <!--<button class="btn btn-primary" type="button">Clear</button>-->
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
