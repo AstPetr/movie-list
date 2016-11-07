@@ -26,6 +26,10 @@ export class ListService {
   deleteList(list: List) {
     this.lists.splice(this.lists.indexOf(list), 1);
   }
+  //
+  // searchLists(query: string) {
+  //   this.lists.find(f)
+  // }
 
 
 

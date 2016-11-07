@@ -8,3 +8,28 @@
   background-color: #d8d8d8;
   padding: 20px;
 }
+
+.panel{
+  background-color: #337ab7;
+  border-radius: 0;
+  border-style: none;
+  /*margin-left: 40px;*/
+  /*margin-right: 40px;*/
+}
+
+.col-md-1 {
+  padding: 0;
+  margin: 0;
+}
+
+.thumbnail{
+  border-radius: 0;
+}
+
+img{
+  width: 100%;
+}
+
+#posters {
+  background-color: #d8d8d8;
+}
