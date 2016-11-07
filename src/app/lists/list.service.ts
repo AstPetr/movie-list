@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {List} from "../list";
+import 'rxjs/Rx';
 
 @Injectable()
 export class ListService {
