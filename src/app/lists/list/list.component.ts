@@ -10,23 +10,27 @@ import {MovieService} from "../../movies/movie.service";
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  list: List;
+  // list: List;
   movieIds: string[];
-  movie: Object;
+  movieList: Array<Object> = [];
 
   constructor(private router: ActivatedRoute, private listService: ListService, private movieService: MovieService) { }
 
   ngOnInit() {
+
     this.router.params.subscribe((params) => {
       let id = params['id'];
       this.movieIds = this.listService.getList(id).items;
-      // this.movieService.getMovie(this.listService.getList(id).items[0]).subscribe(movies => {
-      //   this.movies = movies;
-      // });
-      // this.movies = this.movieService.getMovies(this.listService.getList(id).items);
-      // console.log(this.movies);
+      this.movieList = [];
+      for (let id of this.movieIds){
+        this.movieService.getMovie(id).subscribe(movie => {
+          this.movieList.push(movie);
+        });
       }
-    )
+      console.log(this.movieList);
+
+      });
   }
 
 }
+

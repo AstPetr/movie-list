@@ -47,9 +47,11 @@ export class MovieService {
       .map(res => res.json());
   }
 
-  getMovies(movies:string[]) {
+  pushMovies(movies:string[]) {
     for (let id of movies) {
-      this.movieList.push(this.getMovie(id));
+      this.movieList.push(this.getMovie(id)
+
+      );
     }
     return this.movieList;
   }

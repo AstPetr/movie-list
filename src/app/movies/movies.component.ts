@@ -13,9 +13,6 @@ export class MoviesComponent implements OnInit, OnDestroy {
   theatersList: Array<Object>;
   searchResults: Array<Object>;
 
-  over() {
-    console.log("mouse enter");
-  }
   onNavigate(movie){
     this.router.navigate(['/movie/'+movie.id]);
     document.body.scrollTop = 0;
