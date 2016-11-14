@@ -1,5 +1,6 @@
 .navbar {
-  background-color: #d8d8d8;
+  /*background-color: #d8d8d8;*/
+  background-color: rgba(0,0,0,0.5);
   height: 300px;
   border-style: none;
   border-radius: 0;

@@ -14,8 +14,6 @@ export class ListAddComponent implements OnInit {
   list: List;
   searchResults: Array<Object>;
   posters: string[] = [];
-
-
   items: string[] = [];
 
   constructor(private listService: ListService, private movieService: MovieService) { }

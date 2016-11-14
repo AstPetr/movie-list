@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ListService} from "../list.service";
 import {List} from "../../list";
 import {MovieService} from "../../movies/movie.service";
@@ -14,11 +14,15 @@ export class ListComponent implements OnInit {
   movieIds: string[];
   movieList: Array<Object> = [];
 
-  constructor(private router: ActivatedRoute, private listService: ListService, private movieService: MovieService) { }
+  onNavigate(movie) {
+    this.router.navigate(['/list/'+movie.id]);
+  }
+
+  constructor(private activatedRouter: ActivatedRoute, private router: Router, private listService: ListService, private movieService: MovieService) { }
 
   ngOnInit() {
-
-    this.router.params.subscribe((params) => {
+    // rezultatai ne is eiles - fix!!!
+    this.activatedRouter.params.subscribe((params) => {
       let id = params['id'];
       this.movieIds = this.listService.getList(id).items;
       this.movieList = [];
@@ -27,7 +31,6 @@ export class ListComponent implements OnInit {
           this.movieList.push(movie);
         });
       }
-      console.log(this.movieList);
 
       });
   }

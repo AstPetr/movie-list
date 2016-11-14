@@ -6,8 +6,13 @@ import {TvComponent} from "./tv/tv.component";
 import {tvRoutes} from "./tv/tv.routes";
 import {ListsComponent} from "./lists/lists.component";
 import {listRoutes} from "./lists/list.routes";
+import {MovieComponent} from "./movies/movie/movie.component";
 
 const appRoutes: Routes = [
+  { // atskiras kelias i filma be populiariu filmu zemiau
+    path: 'list/:id',
+    component: MovieComponent
+  },
   {
     path: 'lists',
     component: ListsComponent,
