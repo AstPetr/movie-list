@@ -11,24 +11,11 @@ export class MoviesComponent implements OnInit, OnDestroy {
   popularList: Array<Object>;
   popularListTwo: Array<Object>;
   theatersList: Array<Object>;
-  searchResults: Array<Object>;
+
 
   onNavigate(movie){
     this.router.navigate(['/movie/'+movie.id]);
     document.body.scrollTop = 0;
-  }
-
-  clear(query){
-    query.value = "";
-  }
-
-  search(query) {
-    if (query) {
-      document.body.scrollTop = 0;
-      this.movieService.searchMovie(query).subscribe(res => {
-        this.searchResults = res.results;
-      });
-    }
   }
 
   constructor(private movieService: MovieService, private router: Router) {

@@ -16,6 +16,33 @@
 .nav.navbar-nav li a:hover {
   color: #337ab7;
 }
+
+.form-group input {
+  border-style: none;
+  border-radius: 0;
+  color: black;
+}
+
+input[placeholder] {
+  color: #c1c1c1;
+}
+
+img{
+  width: 100%;
+}
+
+.thumbnail{
+  border-radius: 0;
+}
+
+.panel{
+  background-color: #337ab7;
+  border-radius: 0;
+  border-style: none;
+  margin: auto;
+  margin-bottom: 15px;
+  width: 60%;
+}
 /*.nav.navbar-nav.special li a, li > .spc a:hover {*/
   /*color: #337ab7;*/
 /*}*/

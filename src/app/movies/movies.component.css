@@ -7,29 +7,11 @@ img{
   /*margin: 5px;*/
 }
 
-.panel{
-  background-color: #337ab7;
-  border-radius: 0;
-  border-style: none;
-  margin-left: 40px;
-  margin-right: 40px;
-}
-
 .col-md-1 {
   padding: 0;
   margin: 0;
 }
 
-.thumbnail{
-  border-radius: 0;
-}
 
-.form-group input {
-  border-style: none;
-  border-radius: 0;
-  color: black;
-}
 
-input[placeholder] {
-  color: #c1c1c1;
-}
+

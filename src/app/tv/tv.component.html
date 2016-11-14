@@ -1,36 +1,4 @@
 
-<!--Header Search-->
-<ml-header>
-  <div search class="form-group">
-    <input #query type="text" (keyup)="search(query.value)" class="form-control" placeholder="Search">
-  </div>
-  <!--Header Dropdown-->
-  <li dropdown class="dropdown" rbDropdown>
-    <a class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
-    <ul class="dropdown-menu">
-      <li><a href="#">Login</a></li>
-      <li><a href="#">Other</a></li>
-      <li role="separator" class="divider"></li>
-      <li><a href="#">Logout</a></li>
-    </ul>
-  </li>
-</ml-header>
-<!--Search Results-->
-<div class="row">
-  <template [ngIf]="searchResults && query.value">
-    <div class="panel panel-default animated fadeIn">
-      <div class="panel-body">
-        <div *ngFor="let tvshow of searchResults; let i=index" class="col-md-1">
-          <div *ngIf="i < 12">
-            <img *ngIf="tvshow.poster_path" (click)="onNavigate(tvshow); clear(query)" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{tvshow.poster_path}}">
-          </div>
-        </div>
-      </div>
-    </div>
-  </template>
-</div>
-<!--Movie Info-->
-<router-outlet></router-outlet>
 <!--Popular Movies-->
 <div class="row">
   <div *ngFor="let tvshow of popularList; let i=index" class="col-md-2">

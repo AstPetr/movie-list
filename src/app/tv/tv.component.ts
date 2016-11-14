@@ -14,7 +14,7 @@ export class TvComponent implements OnInit {
   searchResults: Array<Object>;
 
   onNavigate(tvshow){
-    this.router.navigate(['tv/'+tvshow.id]);
+    this.router.navigate(['/tv/'+tvshow.id]);
     document.body.scrollTop = 0;
   }
 

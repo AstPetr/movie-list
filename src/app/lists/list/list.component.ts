@@ -15,7 +15,7 @@ export class ListComponent implements OnInit {
   movieList: Array<Object> = [];
 
   onNavigate(movie) {
-    this.router.navigate(['/list/'+movie.id]);
+    this.router.navigate(['/movie/'+movie.id]);
   }
 
   constructor(private activatedRouter: ActivatedRoute, private router: Router, private listService: ListService, private movieService: MovieService) { }
