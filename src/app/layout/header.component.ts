@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {MovieService} from "../movies/movie.service";
 import {Router} from "@angular/router";
+import {TvService} from "../tv/tv.service";
 
 @Component({
   selector: 'ml-header',
@@ -9,6 +10,7 @@ import {Router} from "@angular/router";
 })
 export class HeaderComponent implements OnInit {
   searchResults: Array<Object>;
+  @Input() section: string;
 
   clear(query){
     query.value = "";
@@ -17,20 +19,30 @@ export class HeaderComponent implements OnInit {
   search(query) {
     if (query) {
       document.body.scrollTop = 0;
-      this.movieService.searchMovie(query).subscribe(res => {
-        this.searchResults = res.results;
-      });
+      if (this.section === "tv") {
+        this.tvService.searchTvShow(query).subscribe(res => {
+          this.searchResults = res.results;
+        });
+      } else {
+        this.movieService.searchMovie(query).subscribe(res => {
+          this.searchResults = res.results;
+        });
+      }
     }
   }
 
   onNavigate(movie){
-    this.router.navigate(['/movie/'+movie.id]);
-    document.body.scrollTop = 0;
+    if (this.section === "tv") {
+      this.router.navigate(['/tv/' + movie.id]);
+    } else {
+      this.router.navigate(['/movie/' + movie.id]);
+    }
   }
 
-  constructor(private movieService: MovieService, private router: Router) { }
+  constructor(private movieService: MovieService, private router: Router, private tvService: TvService) { }
 
   ngOnInit() {
+    console.log(this.section);
   }
 
 }

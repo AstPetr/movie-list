@@ -33,15 +33,19 @@ img{
 
 .thumbnail{
   border-radius: 0;
+  margin: 0;
+  background-color: #337ab7;
 }
 
 .panel{
   background-color: #337ab7;
   border-radius: 0;
   border-style: none;
-  margin: auto;
-  margin-bottom: 15px;
-  width: 60%;
+}
+
+.col-md-1 {
+  padding: 0;
+  margin: 0;
 }
 /*.nav.navbar-nav.special li a, li > .spc a:hover {*/
   /*color: #337ab7;*/
