@@ -7,13 +7,16 @@
 <div class="row">
   <div class="col-xs-1"></div>
   <div class="col-xs-10">
+    <!-------------Saraso pridejimo forma--------------->
     <ml-list-add></ml-list-add>
-    <br>
+    <hr>
+    <!---------------------Sarasai---------------------->
     <div class="col-xs-4">
       <ul class="list-group">
         <a class="list-group-item" style="cursor: pointer" *ngFor="let list of lists; let i = index" (click)="onNavigate(list, i)">{{list.name}}</a>
       </ul>
     </div>
+    <!------------------Filmai sarase------------------->
     <div class="col-xs-8">
       <router-outlet></router-outlet>
     </div>

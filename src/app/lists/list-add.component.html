@@ -34,7 +34,7 @@
       </div>
 
       <div class="row">
-        <template [ngIf]="items && posters && items.length > 0 && posters.length > 0">
+        <template [ngIf]="items && posters && items.length > 0 && posters.length > 0" >
           <div id="posters" class="panel panel-default">
             <div class="panel-body">
               <div *ngFor="let poster of posters; let i=index" class="col-md-1">

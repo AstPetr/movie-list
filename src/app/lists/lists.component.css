@@ -8,7 +8,10 @@ input[placeholder] {
   color: #c1c1c1;
 }
 
-label {
-  /*color: #d8d8d8;*/
+.list-group-item {
+  /*border-radius: 0;*/
 }
 
+.row {
+  background-color: #e6e6e6;
+}

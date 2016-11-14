@@ -5,16 +5,14 @@
 }
 
 #add {
-  background-color: #d8d8d8;
   padding: 20px;
 }
 
 .panel{
-  background-color: #337ab7;
+  background-color: #F08403;
   border-radius: 0;
   border-style: none;
-  /*margin-left: 40px;*/
-  /*margin-right: 40px;*/
+  box-shadow: none;
 }
 
 .col-md-1 {
