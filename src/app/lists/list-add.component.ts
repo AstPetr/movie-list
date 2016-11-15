@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnChanges} from '@angular/core';
 import {List} from "../list";
 import {ListService} from "./list.service";
 import {MovieService} from "../movies/movie.service";
@@ -7,31 +7,50 @@ import {MovieService} from "../movies/movie.service";
   selector: 'ml-list-add',
   templateUrl: './list-add.component.html',
   styleUrls: ['./list-add.component.css']
-  // styleUrls: ['../movies/movies.component.css']
 })
-export class ListAddComponent implements OnInit {
+export class ListAddComponent implements OnChanges {
   isAdd = true;
-  list: List;
+  @Input() list: List;
   searchResults: Array<Object>;
   posters: string[] = [];
   items: string[] = [];
 
   constructor(private listService: ListService, private movieService: MovieService) { }
 
-  ngOnInit() {
+  ngOnChanges(changes) {
+    if (changes.list.currentValue === null) {
+      this.isAdd = true;
+      this.list = {name: null, items: null};
+    } else {
+      this.isAdd = false;
+    }
   }
 
   onSubmit(list: List) {
     list.items = this.items;
+    const newList = new List(list.name, list.items);
     if(!this.isAdd) {
-      // edit
+      this.listService.editList(this.list, newList);
+      this.onClear();
     } else {
-    this.list = new List(list.name, list.items);
+      this.list = newList;
       this.listService.addList(this.list);
     }
     this.posters = [];
     this.items = [];
     this.searchResults = [];
+  }
+
+  onDelete() {
+    this.listService.deleteList(this.list);
+    this.onClear();
+    this.posters = [];
+    this.items = [];
+    this.searchResults = [];
+  }
+
+  onClear() {
+    this.isAdd = true;
   }
 
   onNavigate(movie){

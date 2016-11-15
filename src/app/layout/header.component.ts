@@ -10,7 +10,7 @@ import {TvService} from "../tv/tv.service";
 })
 export class HeaderComponent implements OnInit {
   searchResults: Array<Object>;
-  @Input() section: string;
+  @Input() section: string = "movie";
 
   clear(query){
     query.value = "";
@@ -42,7 +42,7 @@ export class HeaderComponent implements OnInit {
   constructor(private movieService: MovieService, private router: Router, private tvService: TvService) { }
 
   ngOnInit() {
-    console.log(this.section);
+    // console.log(this.section);
   }
 
 }

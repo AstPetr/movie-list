@@ -40,7 +40,7 @@
       <div class="panel-body">
         <div *ngFor="let movie of searchResults; let i=index" class="col-md-1">
           <div *ngIf="i < 12">
-            <img *ngIf="movie.poster_path" (click)="onNavigate(movie)" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+            <img *ngIf="movie.poster_path" (click)="onNavigate(movie); clear(query)" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
           </div>
         </div>
       </div>

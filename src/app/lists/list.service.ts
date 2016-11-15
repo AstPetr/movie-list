@@ -27,11 +27,14 @@ export class ListService {
   deleteList(list: List) {
     this.lists.splice(this.lists.indexOf(list), 1);
   }
+  // Redaguoti sarasa
+  editList(oldList: List, newList: List) {
+    this.lists[this.lists.indexOf(oldList)].name = newList.name;
+    Array.prototype.push.apply(this.lists[this.lists.indexOf(oldList)].items, newList.items);
+  }
   //
   // searchLists(query: string) {
   //   this.lists.find(f)
   // }
-
-
 
 }

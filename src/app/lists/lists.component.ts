@@ -23,9 +23,4 @@ export class ListsComponent implements OnInit{
     this.selectedList = list;
   }
 
-  // onSelectList(list: List) {
-  //   this.selectedList = list;
-  // }
-
-
 }
