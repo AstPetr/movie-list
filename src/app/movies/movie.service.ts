@@ -5,7 +5,6 @@ import 'rxjs/Rx';
 @Injectable()
 export class MovieService {
   apikey: string;
-  movieList: Array<Object> = [];
 
   constructor(private _jsonp:Jsonp) {
     this.apikey = '56e73d08d7ac775ed65f1f7d6674d6f1';
@@ -19,11 +18,6 @@ export class MovieService {
 
   getPopularSecond(){
     return this._jsonp.get('https://api.themoviedb.org/3/discover/movie?callback=JSONP_CALLBACK&sort_by=popularity.desc&page=2&api_key='+this.apikey)
-      .map(res => res.json());
-  }
-
-  getInTheaters(){
-    return this._jsonp.get('https://api.themoviedb.org/3/discover/movie?callback=JSONP_CALLBACK&primary_release_date.gte=2016-09-26&primary_release_date.lte=2016-10-30&api_key='+this.apikey)
       .map(res => res.json());
   }
 
@@ -45,15 +39,6 @@ export class MovieService {
   getMovieKeywords(id:string) {
     return this._jsonp.get('https://api.themoviedb.org/3/movie/'+id+'/keywords?callback=JSONP_CALLBACK&api_key='+this.apikey)
       .map(res => res.json());
-  }
-
-  pushMovies(movies:string[]) {
-    for (let id of movies) {
-      this.movieList.push(this.getMovie(id)
-
-      );
-    }
-    return this.movieList;
   }
 
 }

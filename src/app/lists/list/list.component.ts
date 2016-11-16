@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {ListService} from "../list.service";
-import {List} from "../../list";
+import {List} from "../list";
 import {MovieService} from "../../movies/movie.service";
 
 @Component({

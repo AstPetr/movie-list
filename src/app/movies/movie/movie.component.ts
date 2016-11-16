@@ -1,5 +1,5 @@
  import {Component, OnInit} from '@angular/core';
- import {Router, ActivatedRoute} from '@angular/router';
+ import {ActivatedRoute} from '@angular/router';
  import {MovieService} from "../movie.service";
  import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 
@@ -27,11 +27,9 @@ export class MovieComponent implements OnInit {
     this.router.params.subscribe((params) => {
       let id = params['id'];
       this.movieService.getMovie(id).subscribe(movie => {
-        console.log(movie);
         this.movie = movie;
       });
       this.movieService.getMovieVideos(id).subscribe(video => {
-        // console.log(video);
         this.movieVideo = video;
       });
       this.movieService.getMovieKeywords(id).subscribe(keywords => {

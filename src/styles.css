@@ -9,4 +9,11 @@ body {
   background-color: #040404;
 }
 
+img{
+  width: 100%;
+}
 
+.btn {
+  border-radius: 0;
+  border-style: none;
+}

@@ -1,21 +1,18 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Component} from '@angular/core';
 import {MovieService} from "./movie.service";
-import {RouterModule, Router} from "@angular/router";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'ml-movies',
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.css']
 })
-export class MoviesComponent implements OnInit, OnDestroy {
+export class MoviesComponent {
   popularList: Array<Object>;
   popularListTwo: Array<Object>;
-  theatersList: Array<Object>;
-
 
   onNavigate(movie){
     this.router.navigate(['/movie/'+movie.id]);
-    document.body.scrollTop = 0;
   }
 
   constructor(private movieService: MovieService, private router: Router) {
@@ -25,13 +22,6 @@ export class MoviesComponent implements OnInit, OnDestroy {
     this.movieService.getPopularSecond().subscribe(res => {
       this.popularListTwo = res.results;
     });
-    this.movieService.getInTheaters().subscribe(res => {
-      this.theatersList = res.results;
-    });
   }
-
-  ngOnInit() {}
-
-  ngOnDestroy() {}
 
 }

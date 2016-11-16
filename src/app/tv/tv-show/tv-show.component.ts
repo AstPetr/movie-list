@@ -27,19 +27,15 @@ export class TvShowComponent implements OnInit {
     this.router.params.subscribe((params) => {
       let id = params['id'];
       this.tvService.getTvShow(id).subscribe(tvshow => {
-        // console.log(tvshow);
         this.tvshow = tvshow;
       });
       this.tvService.getTvShowVideos(id).subscribe(video => {
-        // console.log(video);
         this.tvshowVideo = video;
       });
       this.tvService.getTvShowKeywords(id).subscribe(keywords => {
-        console.log(keywords);
         this.tvshowKeywords = keywords;
       });
     });
-    // console.log(this.movieVideo.id);
   }
 
 }

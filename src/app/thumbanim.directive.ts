@@ -9,7 +9,6 @@ export class ThumbanimDirective {
   }
   @HostListener('mouseenter') open() {
     this.isOpen = true;
-    // console.log("test");
   }
   @HostListener('mouseleave')  close() {
     this.isOpen = false;

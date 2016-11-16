@@ -1,7 +1,8 @@
 import {Component, Input, OnChanges} from '@angular/core';
-import {List} from "../list";
+import {List} from "./list";
 import {ListService} from "./list.service";
 import {MovieService} from "../movies/movie.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'ml-list-add',
@@ -15,7 +16,7 @@ export class ListAddComponent implements OnChanges {
   posters: string[] = [];
   items: string[] = [];
 
-  constructor(private listService: ListService, private movieService: MovieService) { }
+  constructor(private listService: ListService, private movieService: MovieService, private router: Router) { }
 
   ngOnChanges(changes) {
     if (changes.list.currentValue === null) {
@@ -51,6 +52,7 @@ export class ListAddComponent implements OnChanges {
 
   onClear() {
     this.isAdd = true;
+    this.router.navigate(['lists']);
   }
 
   onNavigate(movie){

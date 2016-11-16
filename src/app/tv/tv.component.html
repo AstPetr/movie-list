@@ -1,17 +1,11 @@
+<!--Serch for tv-->
 <ml-header [section]="'tv'"></ml-header>
 <!--Popular Movies-->
 <div class="row">
   <div *ngFor="let tvshow of popularList; let i=index" class="col-md-2">
     <div *ngIf="i < 36">
-      <img *ngIf="tvshow.poster_path" (click)="onNavigate(tvshow); clear(query)" mlThumbanim class="animated" src="http://image.tmdb.org/t/p/w500/{{tvshow.poster_path}}">
-<!--<a routerLink = "/tv/{{tvshow.id}}">      <img *ngIf="tvshow.poster_path" src="http://image.tmdb.org/t/p/w500/{{tvshow.poster_path}}"></a>-->
+      <img *ngIf="tvshow.poster_path" (click)="onNavigate(tvshow)" mlThumbanim class="animated" src="http://image.tmdb.org/t/p/w500/{{tvshow.poster_path}}">
     </div>
   </div>
-
-  <!--<div *ngFor="let tvshow of popularListTwo; let i=index" class="col-md-2">-->
-    <!--<div *ngIf="i < 10">-->
-      <!--<img *ngIf="tvshow.poster_path" (click)="onNavigate(tvshow); ; clear(query)" mlThumbanim class="animated" src="http://image.tmdb.org/t/p/w500/{{tvshow.poster_path}}">-->
-    <!--</div>-->
-  <!--</div>-->
 </div>
 
