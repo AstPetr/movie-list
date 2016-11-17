@@ -19,6 +19,7 @@ import {ListService} from "./lists/list.service";
 import { ListAddComponent } from './lists/list-add.component';
 import { ListComponent } from './lists/list/list.component';
 import { ThumbanimDirective } from './thumbanim.directive';
+import {ListlightDirective} from "./lists/list/listlight.directive";
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { ThumbanimDirective } from './thumbanim.directive';
     ListsComponent,
     ListAddComponent,
     ListComponent,
-    ThumbanimDirective
+    ThumbanimDirective,
+    ListlightDirective
   ],
   imports: [
     BrowserModule,

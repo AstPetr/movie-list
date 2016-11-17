@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {ListService} from "../list.service";
-import {List} from "../list";
 import {MovieService} from "../../movies/movie.service";
 
 @Component({
@@ -13,14 +12,20 @@ export class ListComponent implements OnInit {
   // list: List;
   movieIds: string[];
   movieList: Array<Object> = [];
+  pageid: number;
 
   onNavigate(movie) {
     this.router.navigate(['/movie/'+movie.id]);
   }
 
+  onDelete(id) {
+    this.listService.deleteListId(id, this.pageid);
+    // console.log(id);
+  }
+
   constructor(private activatedRouter: ActivatedRoute, private router: Router, private listService: ListService, private movieService: MovieService) { }
 
-  ngOnInit() {
+  getMovies() {
     // rezultatai ne is eiles - fix!!!
     this.activatedRouter.params.subscribe((params) => {
       let id = params['id'];
@@ -31,8 +36,12 @@ export class ListComponent implements OnInit {
           this.movieList.push(movie);
         });
       }
+      this.pageid = id;
+    });
+  }
 
-      });
+  ngOnInit() {
+    this.getMovies();
   }
 
 }

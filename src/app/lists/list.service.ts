@@ -32,6 +32,12 @@ export class ListService {
     this.lists[this.lists.indexOf(oldList)].name = newList.name;
     Array.prototype.push.apply(this.lists[this.lists.indexOf(oldList)].items, newList.items);
   }
+  deleteListId(id: string, pageid: number) {
+    // this.lists[pageid].items.splice( this.lists[pageid].items.indexOf(id), 1);
+    console.log(this.lists[pageid].items);
+    console.log(this.lists[pageid].items.indexOf(id));
+    console.log(id);
+  }
   //
   // searchLists(query: string) {
   //   this.lists.find(f)

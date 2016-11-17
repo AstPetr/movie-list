@@ -1,17 +1,19 @@
 
 <div *ngIf="movieList">
   <div *ngFor="let movie of movieList; let i=index" >
-    <div class="row" (click)="onNavigate(movie)">        <!-- perduoti movie objekta per navigate funkc -->
-      <div class="col-xs-2">
+    <div *ngIf="movieIds[i] == movie.id" class="row">        <!-- perduoti movie objekta per navigate funkc -->
+      <div mlListlight (click)="onNavigate(movie)"><div class="col-sm-2">
         <div class="thumbnail"><img src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt=""></div>
       </div>
-      <div class="col-xs-10">
+      <div class="col-sm-8">
         <div class="panel panel-primary">
           <div class="panel-heading">{{i+1}} | {{movie.title}}</div>
           <div class="panel-body">{{movie.tagline}}</div>
         </div>
+      </div></div>
+      <div class="col-sm-2">
+        <button class="btn btn-danger" (click)="onDelete(movie.id)">X</button>
       </div>
     </div>
-
   </div>
 </div>

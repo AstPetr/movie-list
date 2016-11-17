@@ -2,3 +2,13 @@
   border-radius: 0;
 }
 
+.highlight .panel-heading{
+  background-color: #285688;
+  /*background-color: #3b93d8;*/
+  border-color: #285688;
+}
+
+.highlight .panel {
+  border-color: #285688;
+}
+
