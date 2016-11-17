@@ -16,10 +16,10 @@ export class MoviesComponent {
   }
 
   constructor(private movieService: MovieService, private router: Router) {
-    this.movieService.getPopular().subscribe(res => {
+    this.movieService.getPopular(1).subscribe(res => {
       this.popularList = res.results;
     });
-    this.movieService.getPopularSecond().subscribe(res => {
+    this.movieService.getPopular(2).subscribe(res => {
       this.popularListTwo = res.results;
     });
   }

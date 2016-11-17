@@ -10,8 +10,8 @@ export class TvService {
     this.apikey = '56e73d08d7ac775ed65f1f7d6674d6f1';
   }
 
-  getPopular(){
-    return this._jsonp.get('https://api.themoviedb.org/3/discover/tv?callback=JSONP_CALLBACK&sort_by=popularity.desc&api_key='+this.apikey)
+  getPopular(nr:number){
+    return this._jsonp.get('https://api.themoviedb.org/3/discover/tv?callback=JSONP_CALLBACK&sort_by=popularity.desc&api_key='+this.apikey+'&page='+nr)
       .map(res => res.json());
   }
 

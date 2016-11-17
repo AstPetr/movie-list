@@ -3,9 +3,10 @@
 <!--Popular Movies-->
 <div class="row">
   <div *ngFor="let tvshow of popularList; let i=index" class="col-md-2">
-    <div *ngIf="i < 36">
-      <img *ngIf="tvshow.poster_path" (click)="onNavigate(tvshow)" mlThumbanim class="animated" src="http://image.tmdb.org/t/p/w500/{{tvshow.poster_path}}">
-    </div>
+    <img *ngIf="tvshow.poster_path" (click)="onNavigate(tvshow)" mlThumbanim class="animated" src="http://image.tmdb.org/t/p/w500/{{tvshow.poster_path}}">
+  </div>
+  <div *ngFor="let tvshow of popularList2; let i=index" class="col-md-2">
+    <img *ngIf="tvshow.poster_path" (click)="onNavigate(tvshow)" mlThumbanim class="animated" src="http://image.tmdb.org/t/p/w500/{{tvshow.poster_path}}">
   </div>
 </div>
 

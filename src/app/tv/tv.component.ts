@@ -10,14 +10,18 @@ import {Router} from "@angular/router";
 export class TvComponent {
 
   popularList: Array<Object>;
+  popularList2: Array<Object>;
 
   onNavigate(tvshow){
     this.router.navigate(['/tv/'+tvshow.id]);
   }
 
   constructor(private tvService: TvService, private router: Router) {
-    this.tvService.getPopular().subscribe(res => {
+    this.tvService.getPopular(1).subscribe(res => {
       this.popularList = res.results;
+    });
+    this.tvService.getPopular(2).subscribe(res => {
+      this.popularList2 = res.results;
     });
   }
 
