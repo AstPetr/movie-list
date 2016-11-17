@@ -5,10 +5,11 @@ import 'rxjs/Rx';
 @Injectable()
 export class ListService {
   // Sarasu masyvas
-  private lists: List[] = [
-    new List('Name', ['264660', '157336']),
-    new List('Name2', ['162','1995','270303'])
-  ];
+  private lists: List[] = [];
+  //   = [
+  //   new List('Name', ['264660', '157336']),
+  //   new List('Name2', ['162','1995','270303'])
+  // ];
   constructor() { }
 
   // Pasiimti visam sarasu masyvui
@@ -33,14 +34,7 @@ export class ListService {
     Array.prototype.push.apply(this.lists[this.lists.indexOf(oldList)].items, newList.items);
   }
   deleteListId(id: string, pageid: number) {
-    // this.lists[pageid].items.splice( this.lists[pageid].items.indexOf(id), 1);
-    console.log(this.lists[pageid].items);
-    console.log(this.lists[pageid].items.indexOf(id));
-    console.log(id);
+    this.lists[pageid].items.splice( this.lists[pageid].items.indexOf(id), 1);
   }
-  //
-  // searchLists(query: string) {
-  //   this.lists.find(f)
-  // }
 
 }

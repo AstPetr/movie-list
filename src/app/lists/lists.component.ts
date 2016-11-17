@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./lists.component.css']
 })
 export class ListsComponent implements OnInit{
-  lists: List[] = [];
+  lists: List[];
   selectedList: List = null;
 
   constructor(private listService: ListService, private router: Router) { }

@@ -13,7 +13,6 @@ export class ListAddComponent implements OnChanges {
   isAdd = true;
   @Input() list: List;
   searchResults: Array<Object>;
-  posters: string[] = [];
   items: string[] = [];
 
   constructor(private listService: ListService, private movieService: MovieService, private router: Router) { }
@@ -37,7 +36,6 @@ export class ListAddComponent implements OnChanges {
       this.list = newList;
       this.listService.addList(this.list);
     }
-    this.posters = [];
     this.items = [];
     this.searchResults = [];
   }
@@ -45,7 +43,6 @@ export class ListAddComponent implements OnChanges {
   onDelete() {
     this.listService.deleteList(this.list);
     this.onClear();
-    this.posters = [];
     this.items = [];
     this.searchResults = [];
   }
@@ -56,8 +53,7 @@ export class ListAddComponent implements OnChanges {
   }
 
   onNavigate(movie){
-    this.items.push(movie.id);
-    this.posters.push(movie.poster_path);
+    this.items.push(movie);
   }
 
   clear(query){

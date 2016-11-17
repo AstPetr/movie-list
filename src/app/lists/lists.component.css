@@ -8,10 +8,6 @@ input[placeholder] {
   color: #c1c1c1;
 }
 
-.list-group-item {
-  /*border-radius: 0;*/
-}
-
 .row {
   background-color: #e6e6e6;
   padding-top: 60px;

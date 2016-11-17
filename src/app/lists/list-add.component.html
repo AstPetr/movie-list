@@ -13,16 +13,18 @@
         </div>
       </div>
 
-      <div class="row"><div class="col-sm-5 form-group">
-        <label for="movie-search">Pridėti filmą</label>
-        <input
-          #query
-          type="text"
-          (keyup)="search(query.value)"
-          id="movie-search"
-          class="form-control"
-        >
-      </div></div>
+      <div class="row">
+          <div class="col-sm-5 form-group">
+          <label for="movie-search">Pridėti filmą</label>
+          <input
+            #query
+            type="text"
+            (keyup)="search(query.value)"
+            id="movie-search"
+            class="form-control"
+          >
+        </div>
+      </div>
 
       <div class="row">
         <template [ngIf]="searchResults && searchResults.length > 0">
@@ -39,11 +41,11 @@
       </div>
 
       <div class="row">
-        <template [ngIf]="items && posters && items.length > 0 && posters.length > 0" >
+        <template [ngIf]="items && items.length > 0" >
           <div id="posters" class="panel panel-default">
             <div class="panel-body">
-              <div *ngFor="let poster of posters; let i=index" class="col-md-1">
-                  <img class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{poster}}">
+              <div *ngFor="let item of items; let i=index" class="col-md-1">
+                  <img class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{item.poster_path}}">
               </div>
             </div>
           </div>
