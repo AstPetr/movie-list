@@ -2,6 +2,7 @@
  import {ActivatedRoute} from '@angular/router';
  import {MovieService} from "../movie.service";
  import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
+ import {ListService} from "../../lists/list.service";
 
 @Component({
   selector: 'ml-movie',
@@ -15,12 +16,18 @@ export class MovieComponent implements OnInit {
   movieKeywords: Object;
   baseUrl:string = 'https://www.youtube.com/embed/';
   url: SafeResourceUrl;
+  favorite: boolean = false ;
+
+  onAddtoFavorites() {
+    this.listService.pushListMovie(this.movie)
+    this.favorite = true;
+  }
 
   createVideoLink(id='HkIMQLh9k5U') {
     return this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.baseUrl + id);
   }
 
-  constructor(private router:ActivatedRoute, private movieService:MovieService, private sanitizer: DomSanitizer) {
+  constructor(private router:ActivatedRoute, private movieService:MovieService, private listService:ListService, private sanitizer: DomSanitizer) {
   }
 
   ngOnInit() {

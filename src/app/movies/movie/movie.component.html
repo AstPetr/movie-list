@@ -8,7 +8,7 @@
       <h4>{{movie.runtime}} min |
         <small *ngFor="let genre of movie.genres"> {{genre.name}}</small>
       </h4>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+      <p *ngIf="!favorite"><a class="btn btn-primary btn-lg" (click)="onAddtoFavorites()"  role="button">Pridėti</a></p>
     </div>
   </div>
 

@@ -25,21 +25,21 @@
           >
         </div>
       </div>
-
-      <div class="row">
+      <!------Paieska------->
+      <div class="row search">
         <template [ngIf]="searchResults && searchResults.length > 0">
           <div class="panel panel-default animated fadeIn">
             <div class="panel-body">
               <div *ngFor="let movie of searchResults; let i=index" class="col-md-1">
                 <div *ngIf="i < 12">
-                  <img *ngIf="movie.poster_path" (click)="onNavigate(movie); clear(query)" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+                  <img *ngIf="movie.poster_path" (click)="onNavigate(movie); clear(query)" class="thumbnail" style="cursor: pointer" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
                 </div>
               </div>
             </div>
           </div>
         </template>
       </div>
-
+      <!-----Pasirinkti Filmai-->
       <div class="row">
         <template [ngIf]="items && items.length > 0" >
           <div id="posters" class="panel panel-default">

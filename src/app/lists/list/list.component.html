@@ -2,7 +2,7 @@
 <div *ngIf="movieList">
   <div *ngFor="let movie of movieList; let i=index" >
     <div class="row">        <!-- perduoti movie objekta per navigate funkc -->
-      <div mlListlight (click)="onNavigate(movie)"><div class="col-sm-2">
+      <div mlListlight (click)="onNavigate(movie)" style="cursor: pointer"><div class="col-sm-2">
         <div class="thumbnail"><img src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt=""></div>
       </div>
       <div class="col-sm-8">

@@ -5,7 +5,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class ListService {
   // Sarasu masyvas
-  private lists: List[] = [];
+  private lists: List[] = [new List('Mėgstamiausi', [])];
   //   = [
   //   new List('Name', ['264660', '157336']),
   //   new List('Name2', ['162','1995','270303'])
@@ -33,8 +33,12 @@ export class ListService {
     this.lists[this.lists.indexOf(oldList)].name = newList.name;
     Array.prototype.push.apply(this.lists[this.lists.indexOf(oldList)].items, newList.items);
   }
-  deleteListId(id: string, pageid: number) {
+  deleteListId(id: Object, pageid: number) {
     this.lists[pageid].items.splice( this.lists[pageid].items.indexOf(id), 1);
+  }
+  // Prideti filma prie megstamiausiu
+  pushListMovie(movie: Object) {
+    this.lists[0].items.push(movie);
   }
 
 }

@@ -8,9 +8,9 @@
   </div>
 
   <div *ngFor="let movie of popularListTwo; let i=index" class="col-md-2">
-    <div *ngIf="i < 16">
+    <!--<div *ngIf="i < 16">-->
       <img *ngIf="movie.poster_path" mlThumbanim (click)="onNavigate(movie)" class="animated" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
-    </div>
+    <!--</div>-->
   </div>
 </div>
 
